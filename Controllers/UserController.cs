@@ -11,7 +11,7 @@ namespace WebApplication2.Controllers
         [HttpGet(Name = "GetUsers")]
         public List<Users> GetUsers()
         {
-            return ProductHandler.GetUsers();
+            return UserHandler.GetUsers();
         }
         
     }
