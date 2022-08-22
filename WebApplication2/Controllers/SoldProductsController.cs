@@ -6,12 +6,12 @@ namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SalesController: ControllerBase
+    public class SoldProductsController:ControllerBase
     {
-        [HttpGet(Name = "GetUsers")]
-        public List<Sales> GetSales()
+        [HttpGet(Name = "GetSoldProducts")]
+        public List<SoldProducts> GetSoldProducts()
         {
-            return SalesHandler.GetSales();
+            return SoldProductsHandler.GetSoldProducts();
         }
     }
 }

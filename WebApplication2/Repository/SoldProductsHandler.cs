@@ -9,8 +9,7 @@ namespace WebApplication2.Repository
         public static List<SoldProducts> GetSoldProducts()
         {
             List<SoldProducts> soldProductsList = new List<SoldProducts>();
-            SoldProducts soldProducts = new SoldProducts();
-
+            
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand("Select * FROM ProductoVendido", sqlConnection))
@@ -22,6 +21,7 @@ namespace WebApplication2.Repository
                         {
                             while (sqlDataReader.Read())
                             {
+                                SoldProducts soldProducts = new SoldProducts();
                                 soldProducts.psId = Convert.ToInt32(sqlDataReader["Id"]);
                                 soldProducts.psStock = Convert.ToInt32(sqlDataReader["Id"]);
                                 soldProducts.psIdProduct = Convert.ToInt32(sqlDataReader["Id"]);

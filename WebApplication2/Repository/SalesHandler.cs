@@ -10,7 +10,7 @@ namespace WebApplication2.Repository
         public static List<Sales> GetSales()
         {
             List<Sales> salesList = new List<Sales>();
-            Sales sales = new Sales();
+            
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand("Select * FROM Producto", sqlConnection))
@@ -22,6 +22,7 @@ namespace WebApplication2.Repository
                         {
                             while (sqlDataReader.Read())
                             {
+                                Sales sales = new Sales();
                                 sales.salesId = Convert.ToInt32(sqlDataReader["Id"]);
                                 sales.salesCommentary = sqlDataReader["Descripciones"].ToString();
 
